@@ -1,0 +1,337 @@
+/* normalizamos */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* cuando pasamos el mouse por etiquetas a no nos aparecera subrayado el enlace. */
+a:hover {
+    text-decoration: none;
+}
+
+html, header{
+    background-color: rgb(48,52,63);
+}
+
+header{
+    padding: 1rem 2rem;
+}   
+
+.navbar{
+    max-width: 1200px; /* limitamos el ancho del navbar */
+    margin: 0 auto;  /* 0 para arriba y abajo y auto para centrar el elemento dentro de su contenedor */
+    display: flex; /* hace que los elemento esten uno al lado del otro */
+    justify-content: space-between; /*poner nuestros 2 elementos en ambas puntas del contenedor*/
+    align-items: center;     /* el menu y la imagen no estan centrado (en la misma linea ) entonces lo centramos*/
+    padding-bottom: 20px;   
+}
+
+.navbar__menu{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;   
+}   
+
+/* Pasos para hacer la transicion al pasar el mouse sobre los enlaces. 1) configurar transition: 
+en el selector directo el 'a' del navbar NO en el padre ni en el abuelo. 
+*/
+.navbar__item a {
+    transition:
+        color 0.5s,
+        background-color 0.2s;
+    color: white;
+    padding: 15px 10px;
+    border-radius: 5px;
+    font-family: 'Raleway';
+    font-size: 20px;
+}
+/* Paso 2) configurar el a:hover y listo. */
+
+.navbar__item a:hover {
+    background-color: white;
+    color: black;
+}
+.navbar__item{
+    margin-top: 12px;
+}
+
+/* estilos propios del index.html  */
+
+.articleIng{
+    background-image: linear-gradient(
+        0deg, rgba(0,0,0, 0.5), rgba(0,0,0, 0.5)
+     ), url('../img/funkos-banner.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100% 75%; 
+    background-size: 100% 200%;
+    height: 400px; /* altura de la imagen*/
+    text-align: left;
+    padding: 100px 100px 0px 100px;
+}
+
+.articleIng__h3, .articleIng__p, .articleIng__a,
+.articleMerGra__h3, .articleMerGra__p, .articleMerGra__a, .UltLan__h2, .UltLan__a, .footer__p__center{
+    font-family: 'Raleway';
+    color: rgb(255, 255, 255);    
+}
+
+.articleIng__h3{
+    font-size: 50px ;
+}
+.articleIng__p{
+    font-size: 20px ;
+    padding-top: 10px;   
+}
+
+.articleIng__a, .articleMerGra__a{
+    color: black;
+    font-size: 20px;
+    display: inline-block;
+    background-color: white;
+    border-radius: 25px;
+    margin-top: 40px;
+    padding: 15px 80px 15px 80px;
+}
+
+
+.DivMerGra{
+    display: flex; /* Activa el flexbox para alinear los elementos en fila */
+    align-items: center; /* pone los elementos en la misma linea centrada */
+    justify-content: center; /* centrar objetos sin usar padding ni margin aplica al div q contiene los elementos*/
+    padding-top: 5px;
+    padding-left: 50px;
+}
+
+.DivMerGra:nth-child(even) {
+    /* Estilos para elementos pares */
+    flex-direction: row-reverse; /* Invertir el orden en elementos pares */
+  }
+  
+  .DivMerGra picture {
+    /* Estilos para la etiqueta <picture> */
+    flex: 1; /* Hace que la imagen ocupe el espacio disponible */
+    order: 2; /* Cambia el orden para que <picture> vaya primero */
+  }
+  
+  .DivMerGra article {
+    /* Estilos para la etiqueta <article> */
+    flex: 1; /* Hace que el contenido del artículo ocupe el espacio disponible */
+    order: 1; /* Cambia el orden para que <article> vaya segundo */
+  }
+
+
+
+
+
+.articleMerGra__h3, .articleMerGra__p, .UltLan__h2, .UltLan__a{
+    color: black;
+}
+
+.articleMerGra__h3{
+    font-size:40px;
+    text-transform: uppercase;
+}
+
+.articleMerGra__p{
+    font-size:20px;
+}
+
+.articleMerGra__hr{
+    margin-top: 30px;
+    color: #FF3333;
+    width: 165%;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.articleMerGra__hr:nth-child(odd){
+    width: 90%;
+}
+
+.articleMerGra__a{
+    background-color: #30343F;
+    color: white;
+}
+
+.pictureMerGra{
+    padding-left: 250px;
+}
+
+.pictureMerGra__small{
+    padding-left: 0px;
+}
+
+
+
+
+
+.div__paddRight{
+    margin: 0px 180px 0px 0px;
+}
+
+
+
+.UltLan__h2{
+    font-size:50px;
+    font-weight: bold;
+    font-weight: 900;
+}
+
+
+
+.UltLan__a{
+    text-decoration: none;
+    font-size: 20px;
+}
+
+
+/* aplicarle  */
+.carousel{
+    margin-left: 20px;
+}
+
+/* configuramos la altura y el ancho del carousel  */ 
+.carousel__Size{
+    max-height: 1000px;
+    width: 1850px;
+}
+
+
+/* ponemos el fondo blanco con sombra pertenciente al arrow */
+
+/*  we change arrow color here in backgimg in ->fill: black or blue or white,etc an we change arrow size with backgr-size */
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+.carousel__setupArrow{
+    background-size: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: white;
+    border: solid white 1px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+
+footer{
+    background-color: rgb(48,52,63);
+    width: 100%; /* limitamos el ancho del navbar */
+    height: 250px;    
+}
+
+.navbarFooter{
+    text-align: left; /* ponemos el texto a la izquierda */
+    display: flex;       /* poner ls enlaces al lado del icono del funko      */
+    align-items: center; /* alinear items todos en una misma linea  */
+    justify-content: space-between ;    /* a los 2 unicos elementos los ponemos cada uno en lados opuesto*/
+    padding: 70px 0px 0px 0px ; /*"hacemos "bajar" a los elementos unos pixeles"*/      
+    margin: 0px 100px ; /* acercamos a los elementos entre si unos pixeles */
+}
+
+.navbarFooter ul{
+    list-style: none;
+}
+
+.footer__p__center{
+    filter: brightness(100%);
+    font-size: 20px ;
+    padding-top: 20px;   
+    text-align: center;
+}
+
+/* Carrusel css*/
+.carou-title{
+    font-family: 'Raleway';
+    font-size:60px;
+    font-weight: bolder;
+    font-weight: 800;
+}
+.carou-body{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: center;
+}
+.card-item{
+    margin: 0px 10px;
+}
+
+.card-content{
+    padding: 20px;
+}
+
+.card-content-title{
+    font-size: 25;
+    font-weight: 500;
+}
+
+.card-content-nameProduct{
+    font-size: 25;
+    font-weight: 700;
+}
+
+.card-content-price{
+    font-size: 30px;
+    font-weight: 500;
+}
+.card-content-cuotas{
+    font-size: 25;
+    color: #1D84B5;
+    font-weight: bold;
+}
+
+.card-imagen-front, .card-imagen-back, .card-imagen-cover{
+    max-height: 95%;
+    max-width: 95%;
+}
+
+.card-imagen-cover{
+    display: flex;
+    position: relative;
+}
+
+.card-imagen-cover img{
+    animation: fade .7s;
+}
+
+.card-imagen-back{
+    display: none;
+}
+
+
+.card-imagen-cover:hover .card-imagen-back{
+    display: block;
+}
+
+.card-imagen-cover:hover .card-imagen-front{
+    display: none;
+}
+
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
+
+.card-item-tag{
+    font-size: 14;
+    background-color: red;
+    color: white;
+    padding: 8px 12px;
+    position: absolute;
+    right: 0;
+}
+

@@ -1,0 +1,114 @@
+/* normalizamos */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* header */
+/* cuando pasamos el mouse por etiquetas a no nos aparecera subrayado el enlace. */
+a:hover {
+    text-decoration: none;
+}
+
+html, header{
+    background-color: rgb(48,52,63);
+}
+
+header{
+    padding: 1rem 2rem;
+}   
+
+.navbar{
+    max-width: 1200px; /* limitamos el ancho del navbar */
+    margin: 0 auto;  /* 0 para arriba y abajo y auto para centrar el elemento dentro de su contenedor */
+    display: flex; /* hace que los elemento esten uno al lado del otro */
+    justify-content: space-between; /*poner nuestros 2 elementos en ambas puntas del contenedor*/
+    align-items: center;     /* el menu y la imagen no estan centrado (en la misma linea ) entonces lo centramos*/
+    padding-bottom: 20px;   
+}
+
+.navbar__menu{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;   
+}   
+
+/* Pasos para hacer la transicion al pasar el mouse sobre los enlaces. 1) configurar transition: 
+en el selector directo el 'a' del navbar NO en el padre ni en el abuelo. 
+*/
+.navbar__item a {
+    transition:
+        color 0.5s,
+        background-color 0.2s;
+    color: white;
+    padding: 15px 10px;
+    border-radius: 5px;
+    text-decoration:none;
+    font-family: 'Raleway';
+    font-size: 20px;
+}
+
+.navbar__item__padd{
+    padding-top: 7px;
+    margin-top: 7px;
+}
+/* Paso 2) configurar el a:hover y listo. */
+
+.navbar__item a:hover {
+    background-color: white;
+    color: var(--color-fondo);
+}
+
+/* Footer */
+
+
+footer{
+    background-color: rgb(48,52,63);
+    width: 100%; /* limitamos el ancho del navbar */
+    height: 250px;
+}
+
+.navbarFooter{
+    text-align: left; /* ponemos el texto a la izquierda */
+    display: flex;       /* poner ls enlaces al lado del icono del funko      */
+    align-items: center; /* alinear items todos en una misma linea  */
+    justify-content: space-between ;    /* a los 2 unicos elementos los ponemos cada uno en lados opuesto*/
+    padding: 50px 0px 0px 0px ; /*"hacemos "bajar" a los elementos unos pixeles"*/      
+    margin: 0px 100px ; /* acercamos a los elementos entre si unos pixeles */
+}
+
+.navbarFooter ul{
+    list-style: none;
+}
+
+
+.footer__p__center{
+    filter: brightness(100%);
+    font-family: 'Raleway';
+    font-size: 20px ;
+    color: rgb(255, 255, 255); 
+    padding-top: 20px;   
+    text-align: center;
+}
+
+/* main ---------*/
+
+.div__main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.backgSky{
+    background-color: rgb(218, 235, 135);
+    color: black;
+    font-weight: bolder;
+}
+
+.div__main h1{
+    font-size: 70px;
+}
+
+

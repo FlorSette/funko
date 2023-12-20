@@ -1,0 +1,150 @@
+@import url("/css/shop/general2.css");
+
+/* MAIN LAYOUT */
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.2rem 10%;
+}
+
+main .list-products {
+    flex-grow: 1;
+}
+
+/* SEARCH FORM */
+
+main .search-input {
+    /* width: 70%; */
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 1rem;
+}
+
+main .search-input input {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 0.4em 1em;
+    width: min(80%, 550px);
+    font-size: inherit;
+}
+
+main .search-input svg {
+    transition: background-color 0.2s;
+    border-radius: 10px;
+}
+
+main .search-input svg:hover {
+    background-color: lightgray;
+}
+
+/* PRODUCTS LIST */
+
+main .list-products {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+h2 {
+    width: 75%;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+/* BUTTON ADD */
+
+main .agregar {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    align-items: center;
+    gap: 0.4em;
+    font-size: 1.2rem;
+}
+
+.agregar a {
+    display: inline-block;
+    transition: background-color 0.5s, color 0.5s;
+    border: 2px solid transparent;
+    border-radius: 0.3rem;
+    background-color: red;
+    width: 1.2em;
+    height: 1.2em;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+    text-decoration: none;
+}
+
+.agregar a:hover {
+    border-color: red;
+    background-color: white;
+    color: red;
+}
+
+/* TABLE */
+
+main .table-products {
+    display: flex;
+    justify-content: center;
+}
+
+main table {
+    border-collapse: collapse;
+    width: min(100%, 1200px);
+    overflow: scroll;
+}
+
+main table tbody {
+    max-height: 100px;
+    overflow-y: scroll;
+}
+
+th {
+    padding: 0.6rem;
+    font-weight: bold;
+    font-size: 1.3em;
+    text-align: left;
+}
+
+th,
+td {
+    word-wrap: break-word;
+    max-width: 100px;
+}
+
+td {
+    padding: 0 0.6rem;
+}
+
+/* TABLE COLUMNS */
+
+table tr > :nth-child(1) {
+    font-weight: bold;
+    text-align: center;
+}
+
+table tr > :nth-last-child(1),
+table tr > :nth-last-child(2) {
+    width: 2em;
+    text-align: center;
+}
+
+table tr > :nth-last-child(2) {
+    color: dodgerblue;
+}
+
+table tr > :nth-last-child(1) {
+    color: red;
+}
+
+table tr a {
+    color: inherit;
+    text-decoration: none;
+}

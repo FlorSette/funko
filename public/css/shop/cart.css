@@ -1,0 +1,257 @@
+@import url("/css/shop/general2.css");
+
+/* MAIN LAYOUT */
+
+main {
+	--color-card: rgb(245, 248, 251);
+	--shadow-card: 0 0 0.5rem -0.2rem black;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	gap: 2rem;
+	padding: 3rem 5%;
+}
+
+@media (width > 650px) {
+	main {
+		padding: 3rem 10%;
+	}
+}
+
+:where(.cart-section, .resume-section) h2 {
+	border-bottom: 3px solid red;
+	text-transform: uppercase;
+}
+
+/* CART SECTION */
+
+.cart-section,
+.products-section {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	width: 100%;
+}
+
+.products-section {
+	gap: 1.5rem;
+}
+
+.cart-section h2 {
+	align-self: flex-start;
+	font-size: 2rem;
+}
+
+/* CART CARDS */
+
+.title-card,
+.product-card {
+	--padding-x: min(2%, 5rem);
+	display: grid;
+	grid-template-columns: 2fr 1fr 1fr 0.2fr;
+	align-items: center;
+	box-shadow: var(--shadow-card);
+	background-color: var(--color-card);
+	width: 100%;
+}
+
+.title-card {
+	border-radius: 1em;
+	padding: 0.5rem var(--padding-x);
+	font-weight: 700;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.product-card {
+	border-radius: 2rem;
+	padding: 1rem var(--padding-x);
+}
+
+/* DETAILS */
+
+.product-card__details {
+	display: flex;
+}
+
+.product-card__img {
+	max-width: 100px;
+}
+
+.product-card__description {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 0.5em;
+}
+
+.product-card__description hgroup {
+	display: flex;
+	flex-direction: column;
+	gap: 0.2em;
+}
+
+.product-card__description hgroup * {
+	text-transform: uppercase;
+}
+
+.product-card__description .price::before {
+	content: "$ ";
+}
+
+/* QUANTITY */
+
+.product-card__quantity {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.2em;
+	font-size: 1.2rem;
+}
+
+.product-card__quantity input {
+	padding: 0.2em 0;
+	width: 3em;
+	font-size: inherit;
+	text-align: center;
+}
+
+.quantity__buttons {
+	display: flex;
+	flex-direction: column;
+	gap: 0.3em;
+	font-weight: 700;
+	font-size: 0.8rem;
+}
+
+.product-card__quantity button {
+	--color-text: white;
+	--color-background: red;
+	--time-ts: 0.1s;
+	-webkit-user-select: none;
+	transition: color var(--time-ts), background-color var(--time-ts);
+	border: 2px solid red;
+	background-color: var(--color-background);
+	padding: 0 0.3em;
+	color: var(--color-text);
+	user-select: none;
+}
+
+.product-card__quantity button:hover {
+	--color-text: red;
+	--color-background: white;
+	cursor: pointer;
+	padding: 0 0.3em;
+}
+
+/* PRICE */
+
+.product-card__price {
+	text-align: center;
+}
+
+
+/* BUTTON */
+
+.product-card__remove {
+	display: flex;
+	justify-content: center;
+}
+
+.product-card__remove button {
+	--color-text: red;
+	--color-background: white;
+	--time-ts: 0.1s;
+	-webkit-user-select: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: color var(--time-ts), background-color var(--time-ts);
+	border: 2px solid red;
+	border-radius: 50%;
+	background-color: var(--color-background);
+	aspect-ratio: 1;
+	aspect-ratio: 1;
+	height: 2rem;
+	color: var(--color-text);
+	font-weight: 700;
+	user-select: none;
+}
+
+.product-card__remove button:hover {
+	--color-text: white;
+	--color-background: red;
+	cursor: pointer;
+}
+
+/* RESUME SECTION */
+
+.resume-section {
+	display: flex;
+	flex-direction: column;
+	align-self: flex-end;
+	gap: 1rem;
+	width: min(60%, 500px);
+	font-size: 1.2rem;
+	text-transform: uppercase;
+}
+
+.resume-section h2 {
+	align-self: flex-end;
+}
+
+.resume__chart {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+	box-shadow: var(--shadow-card);
+	background-color: var(--color-card);
+	padding: 1em;
+	font-size: 0.8em;
+}
+
+.resume__chart p {
+	display: flex;
+	justify-content: space-between;
+}
+
+.resume__chart p:last-child {
+	border-top: 2px solid red;
+	padding-top: 0.5em;
+}
+
+.resume__chart .text {
+	font-weight: 700;
+}
+
+.resume__pay {
+	padding-top: 0.5em;
+}
+
+.resume__chart p:not(:first-child){
+	content: "$ ";
+}
+
+.resume__button {
+	--color-text: white;
+	--color-background: red;
+	--color-border: white;
+	--time-ts: 0.1s;
+	transition: color var(--time-ts), background-color var(--time-ts);
+	border: 2px solid var(--color-border);
+	background-color: var(--color-background);
+	padding: 0.5em 0;
+	width: 100%;
+	color: var(--color-text);
+	font-weight: 700;
+	text-align: center;
+	text-transform: inherit;
+}
+
+.resume__button:hover {
+	--color-text: red;
+	--color-background: white;
+	--color-border: red;
+	cursor: pointer;
+}

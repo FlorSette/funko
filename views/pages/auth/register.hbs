@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/register.css">
+    <title>Register</title>
+</head>
+<body>
+    <header><!--inicio header--> 
+        <nav class="navbar container">
+            <picture class="navbar__logo"> 
+                <a href="/"> <img src="../../img/branding/logo_light_horizontal.svg" alt="Isologotipo de la Marca Funkoshop"> </a> 
+            </picture>
+            <ul class="navbar__menu">
+                <li class="navbar__item"> 
+                    <a class="navbar__link" href="/shop">VER TIENDA</a> 
+                </li>
+                <li class="navbar__item"> 
+                    <a class="navbar__link" href="/auth/login">ADMIN</a> 
+                </li>
+                <li class="navbar__item"> 
+                    <a class="navbar__link" href="/auth/logout">SALIR</a> 
+                </li>
+            </ul>           
+        </nav>
+    </header><!--fin header--> 
+    <main>
+        <article class="title ">
+            <h2>CREA TU CUENTA</h2>
+            <p>Completa el formulario para ser parte del mundo de los Funkos</p>
+        </article>
+            <form id="aForm">
+                <div class="formulario">
+                    <div class="form__data">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text"  name="nombre" id="nombre" placeholder="John" value="">
+                    </div>
+                    <div class="form__data">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text"  name="apellido" id="apellido" placeholder="Doe" value="" >
+                    </div>
+                    <div class="form__data">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" placeholder="johndoe@correo.com" value="">
+                    </div>            
+                    <div class="form__data">
+                        <label for="contraseña">Contraseña:</label>
+                        <input type="password" name="contraseña" id="contraseña" placeholder="• • • • • • • • •" value="">
+                    </div>
+                    <div class="form__data ">
+                        <label for="confirmacion">Repita Contraseña:</label>
+                        <input type="password" name="confirmacion_contraseña" id="confirmacion" placeholder="• • • • • • • • •" value="">
+                    </div>
+                    <br>
+                    <div class="div__button"> 
+                        <button type="submit">Registrar</button>
+                        <input type="checkbox" id="condiciones" name="aceptar_condiciones" value="Acepto">
+                        <label for="condiciones">Acepto <a href="#">Términos y Condiciones</a></label>
+                    </div>
+                </div>
+            </form>
+    </main>
+    <footer class="footer">
+        <nav class="navbar container">
+            <ul class="navbar__item">
+                <li class="navbar__item">
+                    <a class="navbar__link" href="/shop">SHOP</a> 
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="/auth/register">REGISTRARSE</a> 
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="/auth/login">INGRESAR</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="/contact">CONTACTO</a> 
+                </li>
+            </ul>
+            <picture>
+                <img src="../../img/branding/isotype.svg" alt="Isotipo de la marca Funkoshop">
+             </picture>
+             
+        </nav>
+        <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
+    </footer>
+        <script src="/js/auth/register.js"></script>
+</body>
+</html>

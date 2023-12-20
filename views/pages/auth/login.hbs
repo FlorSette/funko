@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Para la fuente raleway-->
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <!-- always the style.css goes the last -->
+    <link rel="stylesheet" href="/css/stylesLogin.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <picture>
+                <a href="/">
+                    <img src="/img/branding/logo_light_horizontal.svg" alt="logo de logo_light">
+                </a>
+            </picture>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/shop">VER TIENDA</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/auth/login">ADMIN</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/auth/logout">SALIR</a>
+                </li>
+            </ul>
+        </nav>
+    </header> 
+    <main>
+        <form id="aForm">
+            <div class="div__tituloLogin">
+                <h2>INGRESAR A MI CUENTA</h2>
+            </div>
+            <div class="div__inputMailYContraseña">
+                <div class="div__inputData div__marginLeftEmail">
+                    <label for="email"> Email: </label>
+                    <input id="email" type="email" name="inputMail" placeholder="johndoe@correo.com" value="" >
+                </div>
+                <div class="div__inputData  div__bigPlaceHolder">
+                    <label for="password"> Contraseña: </label>
+                    <input id="password" type="password" name="inputPassword" placeholder="• • • • • • • • • " value="" >
+                </div>
+            </div>
+            <div class="div__ButtonYRecordar">
+                <button id="ingresarBtn" type="submit" class="button__IngresarLogin">
+                    <p>Ingresar</p>
+                </button>
+                <input type="checkbox" name="mayor" id="mayor">
+                <label for="mayor"> Recordarme </label>
+            </div>
+            <div class="div__EnlaceOlvidContras">
+                <a href="#">
+                    <p>Olvidé mi contraseña</p>
+                </a>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <nav class="navbarFooter">
+            <ul>
+                <li class="navbar__item navbar__item__padd "><a href="/shop"> SHOP </a></li>
+                <li class="navbar__item navbar__item__padd "><a href="/auth/register"> REGISTRARSE </a></li>
+                <li class="navbar__item navbar__item__padd "><a href="/auth/login"> INGRESAR </a></li>
+                <li class="navbar__item navbar__item__padd "><a href="/contact"> CONTACTO </a></li>
+            </ul>
+            <picture class="navbar__logo">
+                <a href="">
+                    <img src="/img/branding/isotype.svg" alt="logo de logo_light">
+                </a>
+            </picture>
+        </nav>
+        <p class="articleIng__p footer__p__center"> All rights reserved 2023 - Funkoshop &copy; </p>
+    </footer> 
+    <script src="/js/auth/login.js"></script>
+</body>
+
+</html>

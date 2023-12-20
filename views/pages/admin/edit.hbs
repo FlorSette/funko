@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Item</title>
+    <link rel="stylesheet" href="../../css/edit.css">
+</head>
+<body>
+    <header><!--inicio header--> 
+        <nav class="navbar container">
+            <picture class="navbar__logo"> 
+                <a href="/"> <img src="../../img/branding/logo_light_horizontal.svg" alt="Isologotipo de la Marca Funkoshop"> </a> 
+            </picture>
+            <ul class="navbar__menu">
+                <li class="navbar__item"> 
+                    <a class="navbar__link" href="/shop">VER TIENDA</a> 
+                </li>
+                <li class="navbar__item"> 
+                    <a class="navbar__link" href="/admin">ADMIN</a> 
+                </li>
+                <li class="navbar__item"> 
+                    <a class="navbar__link" href="/auth/logout">SALIR</a> 
+                </li>
+            </ul>           
+        </nav>
+    </header><!--fin header--> 
+
+    <main>
+        <section class="formulario container">
+            <h2>EDITAR ITEM</h2>
+            <div class="form__line">
+                <label for="categoria">Categoría: </label>
+                <select name="categoria" id="categoria">
+                    <option value="{{aCategory}}" selected>{{aCategory}}</option>
+                    {{#each categorys }}
+                    <option value="{{categoryName}}">{{categoryName}}</option>
+                    {{/each }}
+                </select>
+
+                <label for="licencia">Licencia: </label>
+                <select name="licencia" id="licencia">
+                    <option value="{{aLicense}}">{{aLicense}}</option>
+                    {{#each licenses}}
+                    <option value="{{licenseName}}">{{licenseName}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="form__line" id="line__nombre">
+                <label for="nombre">Nombre del producto:</label>
+                <input type="text"  name="nombre" id="nombre" placeholder="" value="{{aProduct.product_name}}"><br>
+            </div>
+            <div class="form__line">
+                <textarea name="descripcion" id="descripcion" cols="85" rows="10">{{aProduct.product_description}}</textarea>
+            </div>
+            <div class="line_fourth">
+                <label for="sku">SKU: </label>
+                <input type="text"  name="sku" id="sku" placeholder="NAR001012" value="{{aProduct.sku}}" >
+
+                <label for="precio">Precio: </label>
+                <input type="text"  name="precio" id="precio" placeholder="$1.799,00" value="{{aProduct.price}}">
+
+                <label for="stock">Stock: </label>
+                <input type="text"  name="stock" id="stock" placeholder="10" value="{{aProduct.stock}}"><br>
+            </div>
+            <br>
+            <div id="line__descuento">
+                <label for="descuento">Descuento: </label>
+                <input type="text"  name="descuento" id="descuento" placeholder="10%" value="{{aProduct.discount}}">
+                <label for="cuotas">Cuotas: </label>
+                <select name="cuotas" id="cuotas">
+                    <option value="cuota3" select>{{aDues}} Cuotas sin interes</option>
+                    <option value="cuota6">{{anotherDues}} Cuotas sin interes</option>
+                </select>
+            </div>
+            <div id="line__img">
+                <label for="imagenes">Imágenes: </label>
+                <input type="file" id="fileImg">
+            </div>
+            <div class="imgProducts">
+                <div class="divImgFront">
+                    <img id="imgFront" src="{{aProduct.image_front}}" width="130px" height="130px" alt="">
+                    <hr class="hrImgProduct">
+                    <p>Frente</p>
+                </div>
+                <div class="divImgBack"> 
+                    <img id="imgBack" src="{{aProduct.image_back}}" width="130px" height="130px" alt="">
+                    <hr class="hrImgProduct">
+                    <p>Dorso </p>
+                </div>
+            </div>
+            <div class="newImgToAdd">
+                <br>
+                <hr>
+                <label id="frenteLabel" style="display: none;">Nuevo Frente: </label>
+                <span id="frenteFileName" style="display: none;"></span>
+                <br> 
+                <label id="dorsoLabel" style="display: none;">Nuevo Dorso: </label>
+                <span id="dorsoFileName" style="display: none;"></span>
+            </div>
+
+        
+            <div>
+                <button id="modifiedProduct">Modificar Producto</button>
+            </div>
+           
+        </section>            
+    </main>
+    <footer class="footer">
+        <nav class="navbar container">
+            <ul class="navbar__item">
+                <li class="navbar__item">
+                    <a class="navbar__link" href="/shop">SHOP</a> 
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="/auth/register">REGISTRARSE</a> 
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="/auth/login">INGRESAR</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="/contact">CONTACTO</a> 
+                </li>
+            </ul>
+            <picture>
+                <img src="../../img/branding/isotype.svg" alt="Isotipo de la marca Funkoshop">
+            </picture>
+        </nav>
+        <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p> 
+    </footer>
+    <script src="/js/admin/edit.js"></script>
+</body>
+</html>
+

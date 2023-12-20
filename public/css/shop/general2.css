@@ -1,0 +1,95 @@
+@import url("/css/shop/normalizing2.css");
+
+html {
+    --color-fondo: rgb(48, 52, 63);
+    font-family: 'Raleway', sans-serif;
+}
+
+/* GENERAL LAYOUT */
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-fondo);
+    padding: 1.5rem 4%;
+}
+
+.header__navbar {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    list-style-type: none;
+}
+
+.header__full-logo {
+    max-width: 300px
+}
+
+@media (width < 650px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-fondo);
+    padding: 3rem 4%;
+}
+
+.footer__navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.3rem;
+    list-style-type: none;
+}
+
+.footer__logo {
+    max-width: 100px
+}
+
+.footer__copyright {
+    position: relative;
+    top: 3.5rem;
+    color: white;
+    text-align: center;
+}
+
+/* NAVIGATION LINKS */
+
+:is(.header__navbar, .footer__navbar) a {
+    display: inline-block;
+    transition:
+        color 0.5s,
+        background-color 0.2s;
+    border-radius: 5px;
+    padding: 5px 8px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+:is(.header__navbar, .footer__navbar) a:hover {
+    background-color: white;
+    color: var(--color-fondo);
+}
